@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  aggregator:
+    build: ./services/aggregator
+    ports:
+      - "8080:8080"
+    environment:
+      - PYTHONUNBUFFERED=1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  light-ai:
+    image: openvino/model_server:latest
+    profiles: ["ai"]
+    command: ["--port", "9000"]
+
+  lidar-service:
+    build: ./services/lidar
+    profiles: ["lidar"]
+
+  fusion-service:
+    build: ./services/fusion
+    profiles: ["fusion"]
+
+

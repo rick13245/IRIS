@@ -1,0 +1,47 @@
+{
+  "name": "itms-cockpit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ITMS Cockpit - Futuristic locomotive HUD (Electron + React + Tailwind + GSAP + Lenis)",
+  "main": "dist-electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n VITE,TS,ELECTRON \"vite\" \"tsc -w -p tsconfig.electron.json\" \"wait-on tcp:5173 && cross-env VITE_DEV_SERVER_URL=http://localhost:5173 electron dist-electron/main.cjs\"",
+    "build": "vite build && tsc -p tsconfig.electron.json && electron-builder",
+    "lint": "eslint .",
+    "start": "cross-env NODE_ENV=production electron .",
+    "dev:aggregator": "cross-env PYTHONUNBUFFERED=1 uvicorn services.aggregator.main:app --host 0.0.0.0 --port 8080",
+    "docker:up": "docker compose up -d --build",
+    "docker:down": "docker compose down"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "@types/node": "^22.5.4",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "electron": "^31.3.1",
+    "electron-builder": "^24.13.3",
+    "eslint": "^9.11.1",
+    "eslint-plugin-react": "^7.35.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12",
+    "tslib": "^2.8.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.2",
+    "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "gsap": "^3.12.5",
+    "leaflet": "^1.9.4",
+    "lenis": "^1.1.22",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
+
+

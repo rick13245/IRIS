@@ -1,0 +1,60 @@
+﻿# Node
+node_modules/
+.npm/
+.pnpm-store/
+npm-debug.log*
+yarn-error.log*
+
+# Build outputs
+/dist/
+/dist-electron/
+/build/
+/.parcel-cache/
+/.turbo/
+/.eslintcache
+
+# Vite
+vite.config.time.json
+
+# Logs
+logs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+.venv/
+venv/
+ENV/
+Lib/
+Scripts/
+
+# Coverage
+.coverage
+coverage/
+htmlcov/
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env/config
+.env
+.env.*
+
+# Electron
+*.asar
+
+# Misc
+*.local
+*.cache

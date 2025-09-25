@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist-electron",
+    "module": "CommonJS",
+    "target": "ES2020",
+    "moduleResolution": "Node",
+    "noEmit": false,
+    "jsx": "preserve"
+  },
+  "include": ["electron/**/*.ts", "electron/**/*.cts"],
+  "exclude": ["electron/preload.cjs"]
+}
+
+

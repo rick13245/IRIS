@@ -1,0 +1,15 @@
+appId: com.itms.cockpit
+productName: ITMS Cockpit
+files:
+  - dist/**
+  - dist-electron/**
+  - electron/**
+asar: true
+win:
+  target: nsis
+mac:
+  target: dmg
+linux:
+  target: AppImage
+
+
