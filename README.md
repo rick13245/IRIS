@@ -1,4 +1,4 @@
-﻿# ITMS‑IRIS — Architecture Overview
+﻿# IRIS — Architecture Overview
 
 This document explains how the system is structured and how data flows through it.
 
